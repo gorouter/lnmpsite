@@ -1,0 +1,32 @@
+#!/bin/bash
+
+cd ~/lnmpsite/ftpd
+
+case "$1" in
+  up)
+    docker-compose up -d
+    ;;
+  down)
+    docker-compose down
+    ;;
+  in)
+    docker exec -it ftpd /bin/bash
+    ;;
+  start)
+    docker-compose start
+    ;;
+  stop)
+    docker-compose stop
+    ;;
+  restart)
+    docker-compose restart
+    ;;
+  status)
+    docker-compose ps
+    ;;
+  *)
+    echo "使用方法: $0 { up | in | down | start | stop | restart | status }"
+    RETVAL=1
+    ;;
+esac
+

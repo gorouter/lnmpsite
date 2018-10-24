@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ -f /.wps_db_created ]; then
+  exit 1
+fi
+
+sleep 5
+WORDPPRESS_DB_NAME=wordpress
+
+mysql -uroot -p$MYSQL_ROOT_PASSWORD -P3306 -e "GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION;"
+mysql -uroot -p$MYSQL_ROOT_PASSWORD -P3306 -e "SHOW DATABASES LIKE '$WORDPPRESS_DB_NAME';" >> /tmp/wps.dat
+
+DB_EXISTS=$(echo $(cat /tmp/wps.dat | grep "$WORDPPRESS_DB_NAME" | awk '!/Database/'))
+rm -f /tmp/wps.dat
+
+if [ "x$DB_EXISTS" = "x" ]; 
+then
+        echo "=> Creating database $WPSDB_NAME"
+        RET=1
+        while [[ RET -ne 0 ]]; do
+                sleep 5
+                mysql -uroot -p$MYSQL_ROOT_PASSWORD -P3306 -e "CREATE DATABASE $WORDPPRESS_DB_NAME"
+                RET=$?
+        done
+        echo "=> Done!"
+else
+        echo "=> Skipped creation of database $WORDPPRESS_DB_NAME – it already exists."
+fi
+
+touch /.wps_db_created

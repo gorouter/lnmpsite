@@ -1,0 +1,11 @@
+#!/bin/bash
+
+(echo $FTP_PASSWORD; echo $FTP_PASSWORD) | pure-pw useradd $FTP_USER -u ftpuser -d /home/ftpusers/$FTP_USER
+chown ftpuser:ftpgroup -R /home/ftpusers/$FTP_USER
+pure-pw mkdb
+
+echo "由 <docker-compose> 创建ftp用户信息如下"
+echo ""
+echo "FTP_USER: $FTP_USER"
+echo "FTP_PASSWORD: $FTP_PASSWORD"
+echo ""
