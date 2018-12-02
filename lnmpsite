@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/lnmpsite
+cd /home/www
 
 case "$1" in
   up)
