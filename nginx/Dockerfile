@@ -79,4 +79,4 @@ RUN set -x \
 
 CMD ["/usr/sbin/nginx","-g","daemon off;"]
 
-EXPOSE 80 443
+EXPOSE 808 443
