@@ -98,4 +98,4 @@ RUN set -x \
 
 CMD ["/usr/local/php/sbin/php-fpm"]
 
-EXPOSE 9000
+EXPOSE 9001
