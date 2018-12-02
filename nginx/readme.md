@@ -1,6 +1,6 @@
 #### 若要使用https，在ssl文件夹中添加自己申请的两个证书文件
 ```
-ssl/nginx.pem
+ssl/nginx.crt
 ssl/nginx.key
 ```
 
