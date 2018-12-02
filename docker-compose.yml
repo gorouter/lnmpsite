@@ -23,7 +23,7 @@ services:
 
     # 映射80和443端口
     ports:
-      - "80:80"
+      - "808:808"
       - "443:443"
     networks:
       - frontend
@@ -40,7 +40,7 @@ services:
     #build: ./php
     
     ports:
-      - "9000"
+      - "9001"
     networks:
       - frontend
       - backend     
