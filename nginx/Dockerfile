@@ -28,6 +28,7 @@ RUN set -x \
   && tar -zxvf nginx-$NGINX_VERSION.tar.gz \
   && cd nginx-$NGINX_VERSION \
   && mkdir -p /var/cache/nginx \
+  && mkdir -p /etc/nginx/cert \
   && groupadd nginx \
   && useradd -r -g nginx nginx \
   && ./configure \
@@ -72,10 +73,10 @@ RUN set -x \
   && rm -rf ~/download \
   && yum clean all 
 
-# 若要使用https，请将以下三个注释去掉,并在ssl文件夹中添加你自己申请的两个证书文件
-#  && mkdir -p /etc/nginx/cert
-#COPY ssl/nginx.pem /etc/nginx/cert/nginx.pem
-#COPY ssl/nginx.key /etc/nginx/cert/nginx.key
+# 若要使用https，在ssl文件夹中添加你自己申请的证书文件
+COPY ssl/nginx.pem /etc/nginx/cert/nginx.pem
+COPY ssl/nginx.key /etc/nginx/cert/nginx.key
+COPY ssl/cloudflare.crt /etc/nginx/cert/cloudflare.crt
 
 CMD ["/usr/sbin/nginx","-g","daemon off;"]
 
