@@ -24,6 +24,6 @@ RUN set -x \
 
   && yum clean all
 
-CMD ["usr/local/redis/src/redis-server","/usr/local/redis/redis.conf"]
+CMD ["/usr/local/redis/src/redis-server","/usr/local/redis/redis.conf"]
 
 EXPOSE 6379
