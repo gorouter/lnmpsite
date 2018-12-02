@@ -74,7 +74,7 @@ RUN set -x \
   && yum clean all 
 
 # 若要使用https，在ssl文件夹中添加你自己申请的证书文件
-COPY ssl/nginx.pem /etc/nginx/cert/nginx.pem
+COPY ssl/nginx.crt /etc/nginx/cert/nginx.crt
 COPY ssl/nginx.key /etc/nginx/cert/nginx.key
 COPY ssl/cloudflare.crt /etc/nginx/cert/cloudflare.crt
 
