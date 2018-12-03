@@ -68,7 +68,7 @@ services:
       - ./mysql/my.cnf:/etc/my.cnf
       
     environment:
-      MYSQL_ROOT_PASSWORD: 1234567890
+      MYSQL_ROOT_PASSWORD: $MySQLpwd
       
     command: ['mysqld', '--character-set-server=utf8']
     networks:
