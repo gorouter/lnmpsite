@@ -1,4 +1,4 @@
-FROM wisbyme/mysql163
+FROM wisbyme/mysql163:5.7.18
 
 MAINTAINER ljjun <wisbyme@gmail.com>
 
