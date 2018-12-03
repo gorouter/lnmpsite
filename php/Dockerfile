@@ -21,7 +21,8 @@ RUN set -x \
   && cd ~/download \
 
   # 编译 PHP
-  && wget http://cn2.php.net/distributions/php-$PHP_VERSION.tar.gz \
+  && wget -O php-$PHP_VERSION.tar.gz http://us.php.net/get/php-$PHP_VERSION.tar.gz/from/this/mirror \
+  #&& wget http://cn2.php.net/distributions/php-$PHP_VERSION.tar.gz \
   && tar -zxf php-$PHP_VERSION.tar.gz \
   && cd php-$PHP_VERSION \
   && groupadd -r nginx \
