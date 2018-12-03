@@ -41,7 +41,7 @@ services:
     #build: ./php
     
     ports:
-      - "9001"
+      - "9901"
     networks:
       - frontend
       - backend     
