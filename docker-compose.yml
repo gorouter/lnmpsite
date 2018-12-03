@@ -7,7 +7,7 @@ services:
       - php
     
     # nginx镜像的路径
-    image: wisbyme/lnmpsite-nginx:latest
+    image: wisbyme/lnmpsite-nginx:1.14.1
     #build: ./nginx
     
     # 使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
@@ -37,7 +37,7 @@ services:
       - mysql
       - redis
     
-    image: wisbyme/lnmpsite-php:latest
+    image: wisbyme/lnmpsite-php:7.2.12
     #build: ./php
     
     ports:
@@ -58,7 +58,7 @@ services:
 
   # MySQL
   mysql:
-    image: wisbyme/lnmpsite-mysql:latest
+    image: wisbyme/lnmpsite-mysql:5.7.18
     #build: ./mysql
     ports:
       - "127.0.0.1:3306:3306"
@@ -78,7 +78,7 @@ services:
 
   # REDIS
   redis:
-    image: wisbyme/lnmpsite-redis:latest
+    image: wisbyme/lnmpsite-redis:4.0.11
     #build: ./redis
     
     ports:
