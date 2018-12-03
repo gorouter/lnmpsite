@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/bin:~/bin
+export PATH
 
+LANG=en_US.UTF-8
 cd /home/www
 
 case "$1" in
@@ -26,4 +29,3 @@ case "$1" in
     RETVAL=1
     ;;
 esac
-
