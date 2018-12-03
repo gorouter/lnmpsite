@@ -10,7 +10,7 @@ services:
     image: wisbyme/lnmpsite-nginx:latest
     #build: ./nginx
     
-    # 这样使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
+    # 使nginx容器把网站文件和目录存放到主机目录中，持久化和方便管理
     volumes:
       - ./nginx/ssl/nginx.crt:/etc/nginx/cert/nginx.crt
       - ./nginx/ssl/nginx.key:/etc/nginx/cert/nginx.key
@@ -22,7 +22,7 @@ services:
     # nginx意外退出时自动重启
     restart: always
 
-    # 映射80和443端口
+    # 映射808和443端口
     ports:
       - "808:808"
       - "443:443"
