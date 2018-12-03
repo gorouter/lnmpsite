@@ -3,7 +3,7 @@ FROM wisbyme/centos163
 MAINTAINER ljjun <wisbyme@gmail.com>
 
 # 设置 Redis 版本
-ENV REDIS_VERSION 4.0.8
+ENV REDIS_VERSION 4.0.11
 
 # 下载并编译
 RUN set -x \
