@@ -3,7 +3,7 @@ FROM wisbyme/centos163
 MAINTAINER ljjun <wisbyme@gmail.com>
 
 # 设置 openssl 和 nginx 版本
-ENV NGINX_VERSION 1.13.9
+ENV NGINX_VERSION 1.14.1
 
 # 安装依赖
 RUN set -x \
