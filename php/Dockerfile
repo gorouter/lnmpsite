@@ -3,8 +3,8 @@ FROM wisbyme/centos163
 MAINTAINER ljjun <wisbyme@gmail.com>
 
 # 设置 PHP 和redis版本
-ENV PHP_VERSION 7.2.3
-ENV REDIS_VERSION 3.1.6
+ENV PHP_VERSION 7.2.12
+ENV REDIS_VERSION 4.2.0
 
 # 安装依赖
 RUN set -x \
@@ -98,4 +98,4 @@ RUN set -x \
 
 CMD ["/usr/local/php/sbin/php-fpm"]
 
-EXPOSE 9001
+EXPOSE 9901
