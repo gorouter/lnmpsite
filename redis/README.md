@@ -1,2 +1,2 @@
 #### Redis for LNMP Site
-version: 4.011
+version: 4.0.11
