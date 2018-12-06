@@ -5,7 +5,7 @@ services:
     depends_on:
       - nginx
     
-    image: wisbyme/lnmpsite-ftpd:latest
+    image: wisbyme/lnmpsite-ftpd:hardened
     #build: ./ftpd
     
     volumes:
