@@ -1,6 +1,31 @@
 version: '2'
-# 定义四个服务nginx,php,mysql,redis
+# 定义服务nginx,php,mysql,redis,ftp,backup
 services:
+  ftpd:
+    depends_on:
+      - nginx
+    
+    image: wisbyme/lnmpsite-ftpd:latest
+    #build: ./ftpd
+    
+    volumes:
+      - ./nginx/www:/home/ftpusers/coder
+      - ./ftpd/pure-ftpd:/etc/pure-ftpd
+    
+    ports:
+      - "20-21:20-21"
+      - "30000-30032:30000-30032"
+    networks:
+      - frontend
+    
+    environment:
+      PUBLICHOST: localhost
+      FTP_USER: $FtpUser
+      FTP_PASSWORD: $FtpUserPasswd
+      
+    restart: unless-stopped
+    container_name: ftpd
+    
   nginx:
     # 依赖php服务，意味着在启动nginx之前先启动php
     depends_on:
