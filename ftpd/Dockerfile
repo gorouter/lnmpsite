@@ -7,7 +7,7 @@ COPY pure-ftpd-dhparams.pem /etc/ssl/private/pure-ftpd-dhparams.pem
 COPY pure-ftpd.pem /etc/ssl/private/pure-ftpd.pem
 
 RUN apt-get update -y \
- && apt-get install -y vim \
+ && apt-get install -y --no-install-recommends vim \
  && chmod +x /usr/local/bin/ftpadd \
  && chown root:root -R /etc/ssl/private/ \
  && chmod 600 /etc/ssl/private/*.pem \
