@@ -36,9 +36,9 @@ RUN apt-get update -y \
  && chmod +x /etc/my_init.d/01_start_backup.sh \
  && chmod +x /usr/bin/backup.sh \
 # && chmod +x /usr/bin/cosuploader.py \
- && mkdir -p /tmp/backup /tmp/crontask \
- && mv /tmp/crontask.sh /tmp/crontask/crontask.sh \
- && chmod +x /tmp/crontask/crontask.sh \
+ && mkdir -p /home/backup /home/crontask \
+ && mv /tmp/crontask.sh /home/crontask/crontask.sh \
+ && chmod +x /home/crontask/crontask.sh \
  && pip install bypy \
  && pip install -U cos-python-sdk-v5 \
  && rm -f /tmp/setuptools-39.0.1-py2.py3-none-any.whl \
@@ -47,4 +47,4 @@ RUN apt-get update -y \
  && rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/* /var/tmp/* \
  && /sbin/install_clean
 
-WORKDIR /tmp/backup
+WORKDIR /home/backup
