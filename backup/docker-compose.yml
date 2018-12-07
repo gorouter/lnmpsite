@@ -15,10 +15,10 @@ services:
       GETT_SHARE_NAME: 
       
       #Using Tencent Cloud
-      #secret_id: AKID15IsskiBQACGbAo6WhgcQbVls7HmuG00
-      #secret_key: csivKvxxrMvSvQpMWHuIz12pThQQlWRW
-      #region: ap-beijing-1
-      #bucketname: test04-123456789
+      secret_id: AKID15IsskiBQACGbAo6WhgcQbVls7HmuG00
+      secret_key: csivKvxxrMvSvQpMWHuIz12pThQQlWRW
+      region: ap-beijing-1
+      bucketname: test04-123456789
       
     restart: unless-stopped
     container_name: backup
