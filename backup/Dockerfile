@@ -36,7 +36,7 @@ RUN apt-get update -y \
  && chmod +x /etc/my_init.d/01_start_backup.sh \
  && chmod +x /usr/bin/backup.sh \
 # && chmod +x /usr/bin/cosuploader.py \
- && mkdir -p /home/backup /home/crontask \
+ && mkdir -p /home/backup /home/crontask /home/site \
  && mv /tmp/crontask.sh /home/crontask/crontask.sh \
  && chmod +x /home/crontask/crontask.sh \
  && pip install bypy \
