@@ -26,6 +26,7 @@ RUN apt-get update -y \
  && apt-get install -y python-pip \
  && cd /tmp \
  && unzip ./gett.zip && mv ./gett /usr/local/ \
+ && ln -s /usr/local/gett/uploader.py /usr/bin/uploader.py \
  && wget https://pypi.python.org/packages/20/d7/04a0b689d3035143e2ff288f4b9ee4bf6ed80585cc121c90bfd85a1a8c2e/setuptools-39.0.1-py2.py3-none-any.whl#md5=ca299c7acd13a72e1171a3697f2b99bc \
  && pip install /tmp/setuptools-39.0.1-py2.py3-none-any.whl \
  && apt-get install -y python-pip python-setuptools \
