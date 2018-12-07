@@ -20,15 +20,23 @@ fi
 #更新信息
 if [ "x$secret_id" != "x" ]; then
   sed -i "/^Secretid/c\secretid=$secret_id" /usr/bin/backup.sh
+else
+  sed -i "/^Secretid/c\secretid=none" /usr/bin/backup.sh
 fi
 if [ "x$secret_key" != "x" ]; then
   sed -i "/^Secretkey/c\secretkey=$secret_key" /usr/bin/backup.sh
+else
+  sed -i "/^Secretkey/c\secretkey=none" /usr/bin/backup.sh
 fi
 if [ "x$region" != "x" ]; then
   sed -i "/^Cnregion/c\cnregion=$region" /usr/bin/backup.sh
+else
+  sed -i "/^Cnregion/c\cnregion=none" /usr/bin/backup.sh
 fi
 if [ "x$bucketname" != "x" ]; then
   sed -i "/^Bucketna/c\bucketna=$bucketname" /usr/bin/backup.sh
+else
+  sed -i "/^Bucketna/c\bucketna=none" /usr/bin/backup.sh
 fi
 
 #每隔5分钟执行 (用于调试)
