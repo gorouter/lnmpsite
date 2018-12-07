@@ -8,7 +8,6 @@ services:
     volumes:
       - /home/lnmpsite:/home/site
       - /home/lnmpback:/home/backup
-      - ./task:/home/crontask
     
     environment:
       #Using ge.tt (保留)
