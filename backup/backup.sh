@@ -1,15 +1,15 @@
 #!/bin/bash
 
-cd /usr/bin
-abclist=$(ls /tmp/backup)
+[[ -f /home/backup/readme.md ]] && rm -f /home/backup/readme.md
+abclist=$(ls /home/backup)
 
 Secretid
 Secretkey
 Cnregion
 Bucketna
 
-for file in $abclist ; do
-
-  python cosuploader.py /tmp/backup/$file $secretid $secretkey $cnregion $bucketna
-
-done
+if [ "x${secretid}" != "x" ]; then
+  for file in $abclist ; do
+    python /usr/bin/cosuploader.py /home/backup/$file $secretid $secretkey $cnregion $bucketna
+  done
+fi
