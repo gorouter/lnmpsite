@@ -6,19 +6,21 @@ services:
     privileged: true
     image: wisbyme/lnmpsite-backup:latest
     volumes:
-      - ./site:/tmp/backup
-      - ./task:/tmp/crontask
+      - /home/lnmpsite:/home/site
+      - ./task:/home/crontask
+      - ./back:/home/backup
     
     environment:
-      #Using ge.tt
-      GETT_TOKEN: 
-      GETT_SHARE_NAME: 
+      #Using ge.tt (保留)
+      apikey: $ApiKey
+      email: $UserEmail
+      password: $UserPasswd
       
       #Using Tencent Cloud
-      secret_id: AKID15IsskiBQACGbAo6WhgcQbVls7HmuG00
-      secret_key: csivKvxxrMvSvQpMWHuIz12pThQQlWRW
-      region: ap-beijing-1
-      bucketname: test04-123456789
+      secret_id: $SecretID
+      secret_key: $SecretKey
+      region: $Region
+      bucketname: $BucketName
       
     restart: unless-stopped
     container_name: backup
