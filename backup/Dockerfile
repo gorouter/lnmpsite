@@ -8,8 +8,9 @@ COPY crontask.sh /tmp/crontask.sh
 COPY gett.zip /tmp/gett.zip
 COPY cosuploader.py /usr/bin/cosuploader.py
 
-#ENV GETT_TOKEN
-#ENV GETT_SHARE_NAME
+#ENV apikey
+#ENV email
+#ENV password
 
 #ENV secret_id 
 #ENV secret_key
