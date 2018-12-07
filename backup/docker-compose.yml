@@ -7,8 +7,8 @@ services:
     image: wisbyme/lnmpsite-backup:latest
     volumes:
       - /home/lnmpsite:/home/site
+      - /home/lnmpback:/home/backup
       - ./task:/home/crontask
-      - ./back:/home/backup
     
     environment:
       #Using ge.tt (保留)
