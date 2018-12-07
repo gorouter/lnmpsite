@@ -39,15 +39,16 @@ else
   sed -i "/^Bucketna/c\bucketna=none" /usr/bin/backup.sh
 fi
 
-#每隔5分钟执行 (用于调试)
+#每隔9分钟执行整站压缩成包, 每隔15分钟尝试执行上传备份: (用于调试)
 if [ "x$BAK_DEBUG" != "x" ]; then
-  echo "*/5 *   * * *   root    nohup /usr/bin/backup.sh > /tmp/backup.log 2>&1 &" >> /etc/crontab
+  echo "*/9  *   * * *   root    nohup /home/crontask/crontask.sh > /var/log/crontask.log 2>&1 &" >> /etc/crontab
+  echo "*/15 *   * * *   root    nohup /usr/bin/backup.sh > /var/log/backup.log 2>&1 &" >> /etc/crontab
 fi
 
-#每小时过15分钟执行:
-#1  0    * * *   root    /home/ubuntu/lnmpbak/task/crontask.sh > /var/log/crontask.log 2>&1 &
+#每天0点过1分钟执行整站压缩成包, 每小时过15分钟尝试执行上传备份:
 if [ "x$BAK_DEBUG" = "x" ]; then
-  echo "15 *    * * *   root    nohup /usr/bin/backup.sh > /tmp/backup.log 2>&1 &" >> /etc/crontab
+  echo "1  0    * * *   root    nohup /home/crontask/crontask.sh > /var/log/crontask.log 2>&1 &" >> /etc/crontab
+  echo "15 *    * * *   root    nohup /usr/bin/backup.sh > /var/log/backup.log 2>&1 &" >> /etc/crontab
 fi
 service cron restart
 
