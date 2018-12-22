@@ -8,10 +8,17 @@ COPY crontask.sh /tmp/crontask.sh
 COPY gett.zip /tmp/gett.zip
 COPY cosuploader.py /usr/bin/cosuploader.py
 
+#=>TeraCloud
+#ENV tcuserid
+#ENV tcpasswd
+#ENV tcdevaddr
+
+#=>Ge.tt
 #ENV apikey
 #ENV email
 #ENV password
 
+#=>Tencent
 #ENV secret_id 
 #ENV secret_key
 #ENV region
@@ -20,7 +27,7 @@ COPY cosuploader.py /usr/bin/cosuploader.py
 
 RUN apt-get update -y \
  && apt-get install -y --no-install-recommends \
-    net-tools wget virt-what iputils-ping iproute2 unzip \
+    net-tools wget virt-what iputils-ping iproute2 unzip davfs2 \
 # && apt-get purge -y python.* \
  && apt-get install -y python2.7 python2.7-dev \
  && ln -s /usr/bin/python2.7 /usr/bin/python \
