@@ -18,7 +18,7 @@ COPY cosuploader.py /usr/bin/cosuploader.py
 #ENV email
 #ENV password
 
-#=>Tencent
+#=>Tencent Cloud
 #ENV secret_id 
 #ENV secret_key
 #ENV region
