@@ -41,8 +41,10 @@ fi
 
 if [ "x$tcuserid" != "x" ] && [ "x$tcuserid" != "xnone" ]; then
   sed -i "/^Tcuserid/c\tcuserid=$tcuserid" /usr/bin/terac.sh
+  sed -i "/^Tcuserid/c\tcuserid=$tcuserid" /usr/bin/backup.sh
 else
   sed -i "/^Tcuserid/c\tcuserid=none" /usr/bin/terac.sh
+  sed -i "/^Tcuserid/c\tcuserid=none" /usr/bin/backup.sh
 fi
 if [ "x$tcpasswd" != "x" ] && [ "x$tcpasswd" != "xnone" ]; then
   sed -i "/^Tcpasswd/c\tcpasswd=$tcpasswd" /usr/bin/terac.sh
