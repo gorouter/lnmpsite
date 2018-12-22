@@ -10,7 +10,12 @@ services:
       - /home/lnmpback:/home/backup
     
     environment:
-      #Using ge.tt (保留)
+      #Using TeraCloud
+      tcuserid: $Tcuserid
+      tcpasswd: $Tcpasswd
+      tcdevaddr: $Tcdevaddr
+      
+      #Using Ge.tt (保留)
       apikey: $ApiKey
       email: $UserEmail
       password: $UserPasswd
