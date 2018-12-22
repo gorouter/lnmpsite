@@ -8,7 +8,7 @@ Secretkey
 Cnregion
 Bucketna
 
-if [ "x${secretid}" != "x" && "x${secretid}" != "xnone" ]; then
+if [ "x${secretid}" != "x" ] && [ "x${secretid}" != "xnone" ]; then
   for file in $abclist ; do
     python /usr/bin/cosuploader.py /home/backup/$file $secretid $secretkey $cnregion $bucketna
   done
