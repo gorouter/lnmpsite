@@ -13,3 +13,11 @@ if [ "x${secretid}" != "x" ] && [ "x${secretid}" != "xnone" ]; then
     python /usr/bin/cosuploader.py /home/backup/$file $secretid $secretkey $cnregion $bucketna
   done
 fi
+
+Tcuserid
+
+if [ "x${tcuserid}" != "x" ] && [ "x${tcuserid}" != "xnone" ]; then
+  if [ -d /home/teradev ]; then
+    cp -R /home/backup/* /home/teradev/
+  fi
+fi
