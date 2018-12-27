@@ -7,6 +7,7 @@ COPY backup.sh /usr/bin/backup.sh
 COPY crontask.sh /tmp/crontask.sh
 COPY terac.sh  /usr/bin/terac.sh
 COPY gett.zip /tmp/gett.zip
+COPY hostloc.sh /usr/bin/hostloc.sh
 COPY cosuploader.py /usr/bin/cosuploader.py
 
 #=>TeraCloud
@@ -45,6 +46,7 @@ RUN apt-get update -y \
  && chmod +x /etc/my_init.d/01_start_backup.sh \
  && chmod +x /usr/bin/backup.sh \
  && chmod +x /usr/bin/terac.sh \
+ && chmod +x /usr/bin/hostloc.sh \
 # && chmod +x /usr/bin/cosuploader.py \
  && mkdir -p /home/backup /home/crontask /home/site \
  && mv /tmp/crontask.sh /home/crontask/crontask.sh \
