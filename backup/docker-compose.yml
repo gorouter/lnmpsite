@@ -8,6 +8,7 @@ services:
     volumes:
       - /home/lnmpsite:/home/site
       - /home/lnmpback:/home/backup
+      - ./keepactive.sh:/usr/bin/keepactive.sh
     
     environment:
       #Using TeraCloud
