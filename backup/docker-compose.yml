@@ -9,6 +9,7 @@ services:
       - /home/lnmpsite:/home/site
       - /home/lnmpback:/home/backup
       - ./keepactive.sh:/usr/bin/keepactive.sh
+      - ./crontask.sh:/home/crontask/crontask.sh
     
     environment:
       #Using TeraCloud
