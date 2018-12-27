@@ -3,6 +3,7 @@
 rm -f /etc/service/sshd/down
 /etc/my_init.d/00_regen_ssh_host_keys.sh
 touch /etc/service/sshd/down
+chmod +x /usr/bin/keepactive.sh
   
 # Setup SSH key
 if [ "x$SSH_AUTHORIZED_KEYS" != "x" ]; then
@@ -69,6 +70,7 @@ fi
 if [ "x$BAK_DEBUG" = "x" ]; then
   echo "1  0    * * *   root    nohup /home/crontask/crontask.sh > /var/log/crontask.log 2>&1 &" >> /etc/crontab
   echo "1  0    * * *   root    nohup /usr/bin/terac.sh  > /var/log/terac.log  2>&1 &" >> /etc/crontab
+  echo "30 0    * * *   root    nohup /usr/bin/keepactive.sh > /var/log/keep.log 2>&1 &" >> /etc/crontab
   echo "15 *    * * *   root    nohup /usr/bin/backup.sh > /var/log/backup.log 2>&1 &" >> /etc/crontab
 fi
 service cron restart
