@@ -1,6 +1,6 @@
 FROM wisbyme/centos163
 
-MAINTAINER ljjun <wisbyme@gmail.com>
+LABEL maintainer="ljjun<wisbyme@gmail.com>"
 
 # 设置 openssl 和 nginx 版本
 ENV NGINX_VERSION 1.14.1

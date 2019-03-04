@@ -1,6 +1,6 @@
 FROM wisbyme/ubuntu16
 
-MAINTAINER ljjun <wisbyme@gmail.com>
+LABEL maintainer="ljjun<wisbyme@gmail.com>"
 
 COPY 01_start_backup.sh /etc/my_init.d/01_start_backup.sh
 COPY backup.sh /usr/bin/backup.sh

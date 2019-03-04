@@ -1,6 +1,6 @@
 FROM wisbyme/centos163
 
-MAINTAINER ljjun <wisbyme@gmail.com>
+LABEL maintainer="ljjun<wisbyme@gmail.com>"
 
 # 设置 PHP 和redis版本
 ENV PHP_VERSION 7.2.12

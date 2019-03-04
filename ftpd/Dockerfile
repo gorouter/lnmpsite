@@ -1,6 +1,6 @@
 FROM stilliard/pure-ftpd:hardened
 
-MAINTAINER ljjun <wisbyme@gmail.com>
+LABEL maintainer="ljjun<wisbyme@gmail.com>"
 
 COPY ftpadd /usr/local/bin/ftpadd
 COPY pure-ftpd-dhparams.pem /etc/ssl/private/pure-ftpd-dhparams.pem
